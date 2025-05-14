@@ -58,6 +58,7 @@ These instructions are for Debian-based systems like **Ubuntu** or **Fedora**.
 ```bash
 sudo apt-get install flex
 sudo apt-get install bison
+```
 
 ## EXECUTION STEPS
 
@@ -66,6 +67,7 @@ sudo apt-get install bison
 **1. Compile Yacc (Bison) File:**
 ```bash
 bison -d project.y
+```
 
 Generates:
 
@@ -74,38 +76,38 @@ project.tab.c
 project.tab.h
 
 2. Compile Lex File:
-2. Compile Lex File:
 
-bash
-Copy code
+
+```bash
 flex project.l
+```
 Generates:
 
 lex.yy.c
 
 3. Compile the Parser Executable:
 
-bash
-Copy code
+```bash
 gcc lex.yy.c project.tab.c -o parser -lm
+```
+
 4. Run the Parser with a C Program (e.g., test.c):
 
-bash
-Copy code
+```bash
 ./parser < test.c
-5. If Parsing is Successful, Compile and Run the Program:
+```
+```output
+Parsing Successful
+```
 
-bash
-Copy code
-gcc test.c -o out
-./out
 🚀 Shell Script Automation
 Automate all of the above using run.sh:
 
-bash
-Copy code
+```bash
 chmod +x run.sh
 ./run.sh test.c
+```
+
 What run.sh does:
 
 Runs the parser
@@ -117,18 +119,19 @@ Executes the compiled binary and prints the output
 🧾 Outputs
 ✅ On Success:
 
-javascript
-Copy code
+```output
 Parsing Successful!
 Compiling with GCC...
 Execution Result:
 <your program output>
 ❌ On Syntax Error:
+```
 
-nginx
-Copy code
+```nginx
 Parsing Failed
 Line Number: 19 syntax error, unexpected '{', expecting ';' or ','
+```
+
 ❓ FAQ
 Q: What if my code uses undeclared variables or uninitialized values?
 A: The parser will still report it as syntactically correct. Semantic errors are not handled yet.
@@ -166,4 +169,3 @@ Building a full-fledged compiler
 
 🌐 Integrate with a simple GUI or web frontend
 ```
-
