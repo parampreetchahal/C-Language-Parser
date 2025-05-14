@@ -2,7 +2,7 @@
 
 %{
 	#include<stdio.h>
-	#include"y.tab.h"
+	#include"project.tab.h"
 	#include<math.h>
 %}
 %%
