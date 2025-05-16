@@ -104,8 +104,8 @@ Parsing Successful
 Automate all of the above using run.sh:
 
 ```bash
-chmod +x run.sh
-./run.sh test.c
+chmod +x compile_and_run.sh
+./compile_and_run.sh test.c
 ```
 
 What run.sh does:
